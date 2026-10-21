@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TPO 코디 스튜디오 프롬프트</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#1d2333;--sub:#5b6478;--line:#dfe3ec;--acc:#3b5bdb}
+@media (prefers-color-scheme:dark){:root{--bg:#141821;--card:#1d2230;--ink:#e8ecf4;--sub:#9aa3b8;--line:#2f3647;--acc:#7c9cff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Malgun Gothic",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:20px 16px 40px}
+.tag{color:var(--acc);font-weight:700;font-size:15px}
+h1{margin:4px 0 6px;font-size:26px}
+.how{color:var(--sub);margin:0 0 16px}
+.bar{position:sticky;top:0;background:var(--bg);padding:8px 0 12px;z-index:1}
+button{width:100%;font:inherit;font-size:20px;font-weight:700;padding:14px;border:0;border-radius:12px;background:var(--acc);color:#fff;cursor:pointer}
+button.ok{background:#2b8a3e}
+pre{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;white-space:pre-wrap;word-break:break-word;font-family:inherit;font-size:15px;line-height:1.7}
+</style></head><body><div class="wrap">
+<div class="tag">실습 2 · 단일 HTML</div>
+<h1>TPO 코디 스튜디오</h1>
+<p class="how">아래 버튼으로 복사 → 제미나이 입력창에서 [Canvas]를 켜고 붙여넣기</p>
+<div class="bar"><button id="copy">📋 프롬프트 전체 복사</button></div>
+<pre id="p">너는 교육용 웹 도구를 만드는 프론트엔드 개발자야.
+중학교 가정 수업에서 쓸 「TPO 코디 스튜디오」를 HTML 파일 하나로 만들어 줘.
+
+[수업 목표]
+중학교 가정 [9기가01-04]. 학생이 의복 디자인 요소(선·색·무늬·재질)를 활용해 개성 있게 옷을 입혀 보고,
+때(Time)·장소(Place)·상황(Occasion)에 맞는 옷차림인지 스스로 점검한다.
+
+[꼭 지킬 원칙]
+- 사진 업로드, 카메라를 절대 사용하지 않는다. 아바타는 학생이 직접 골라 꾸민다.
+- 외모를 평가하거나 "어울린다/안 어울린다"고 판정하지 않는다. 디자인 요소의 '효과'만 안내한다.
+- 모든 옷 아이템은 성별 구분 없이 어떤 아바타든 입을 수 있다.
+- 외부 이미지 파일을 쓰지 않는다. 아바타와 옷은 모두 SVG로 직접 그린다.
+- 파일 하나(index.html)에 HTML·CSS·JavaScript를 모두 넣는다. 외부 자료는 구글 폰트만 허용한다.
+
+[화면 흐름]
+① 시작 화면: 도구 제목, 활동 방법 3줄 안내, [시작하기] 버튼
+
+② 아바타 만들기: 얼굴형(둥근형/갸름한형/각진형/긴형), 피부톤 6가지, 머리 모양 4가지, 체형 3가지를 고르면 SVG 아바타에 바로 반영된다.
+   화면에 "모든 선택에는 정답이 없어요. 나다운 모습으로 만들어 보세요."를 표시한다.
+
+③ 미션 뽑기: 아래 TPO 미션 카드 6장 중 하나를 무작위로 뽑거나 직접 고른다.
+   결혼식 하객(낮) / 조문(장례식) / 산으로 가는 체험학습 / 학생회 선거 발표 / 친구 생일 파티 / 여름 바닷가 가족여행
+
+④ 코디하기: 왼쪽에 아바타, 오른쪽에 선택 패널을 둔다. 고를 때마다 아바타에 바로 반영된다.
+   - 상의: 티셔츠 / 셔츠 / 니트 / 후드티,  네크라인: 라운드넥 / V넥 / 셔츠 칼라
+   - 하의: 긴바지 / 반바지 / 치마,  또는 원피스(선택하면 하의 대신 입음)
+   - 겉옷: 없음 / 재킷 / 가디건,  신발: 운동화 / 구두 / 샌들 / 슬리퍼
+   - 각 옷마다 색(유채색 10개 + 흰색·회색·검정·남색), 무늬(무지/세로 줄무늬/가로 줄무늬/사선 줄무늬/체크/물방울 — SVG pattern으로 실제로 그림), 재질(면/마/울 니트/데님/실크/기능성 소재/가죽)을 고를 수 있다.
+   - 무엇을 고르든 옆에 '디자인 요소 효과' 말풍선을 보여준다. 예시:
+     세로선 → 길고 날씬해 보이는 효과 / 가로선 → 넓고 안정감 있어 보이는 효과 / 사선 → 활동적이고 경쾌한 느낌
+     난색 → 따뜻하고 활동적, 커 보이는 효과 / 한색 → 차분하고 시원한 느낌 / 무채색 → 단정하고 세련된 느낌
+     큰 무늬 → 화려하고 커 보이는 효과 / 작은 무늬 → 차분한 느낌
+     광택 있는 재질 → 커 보이고 화려한 느낌 / 두꺼운 재질 → 부피감이 생김
+     V넥 → 얼굴과 목이 길어 보이는 효과 / 라운드넥 → 부드러운 인상
+
+⑤ TPO 점검: [점검하기]를 누르면 미션별 규칙으로 '적합도'를 별 5개로 보여주고, 규칙마다 ✔ 또는 💡와 그 이유(누구를 배려하는 것인지)를 한 줄씩 설명한다.
+   - 조문: 검정·남색·짙은 회색 같은 어두운 색 / 화려한 무늬와 밝은 색 피하기 / 슬리퍼·반바지 피하기
+   - 결혼식 하객: 위아래를 모두 흰색으로 입지 않기(신부를 배려) / 후드티·슬리퍼 같은 지나치게 편한 옷 피하기
+   - 산 체험학습: 운동화 / 활동하기 편한 긴바지 / 면·데님·기능성 소재 권장, 실크·구두·치마는 불편함
+   - 학생회 선거 발표: 단정한 상의(셔츠·니트·재킷) / 큰 무늬보다 차분한 색 / 슬리퍼 피하기
+   - 여름 바닷가: 통기성 좋은 면·마 / 울 니트·가죽 피하기 / 샌들 가능
+   - 친구 생일 파티: 규칙 없이 자유롭게 개성 표현(별 5개), 대신 ⑥의 설명을 꼭 쓰도록 안내
+   점수가 낮아도 "이렇게 바꿔 보면 어때요?" 식의 긍정적인 말투를 쓴다.
+
+⑥ 나의 코디 설명: "선·색·무늬·재질 중 2가지 이상을 골라, 왜 그렇게 입혔는지 써 보세요." 입력칸을 둔다.
+   설명에 디자인 요소 낱말이 2개 이상 들어 있는지, 30자 이상인지 자기점검 체크리스트로 보여준다.
+
+⑦ 코디 카드: 아바타 그림, 미션, TPO 적합도, 나의 설명, 이름 입력칸을 한 장의 카드로 보여주고,
+   [이미지로 저장] 버튼(SVG를 canvas로 옮겨 PNG 다운로드)과 [처음부터 다시] 버튼을 둔다.
+
+[디자인]
+- 밝고 세련된 패션 스튜디오 느낌. 부드러운 파스텔 배경, 둥근 카드, 큰 버튼.
+- 크롬북·태블릿·휴대폰에서 모두 잘 보이도록 반응형(좁은 화면에서는 아바타 위, 패널 아래).
+- 한글 폰트는 구글 폰트 'Noto Sans KR' 또는 'Jua'.
+
+[답변 형식]
+- index.html 전체 코드를 하나의 코드 블록으로, 중간 생략(... 등) 없이 끝까지 출력한다.
+- 코드 뒤에 수업에서 쓰는 방법을 3줄 이내로 덧붙인다.
+- 애매한 부분은 되묻지 말고 중학교 수업에 맞게 합리적으로 정해서 완성한다.</pre>
+</div>
+<script>
+const b=document.getElementById('copy'),t=document.getElementById('p').textContent;
+function done(){b.textContent='✅ 복사됐어요! 제미나이에 붙여넣으세요';b.classList.add('ok');setTimeout(()=>{b.textContent='📋 프롬프트 전체 복사';b.classList.remove('ok')},2500)}
+function legacy(){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();const r=document.execCommand('copy');a.remove();r?done():alert('복사가 막혔어요. 글을 길게 눌러 전체 선택 후 복사해 주세요.')}
+b.onclick=()=>navigator.clipboard?navigator.clipboard.writeText(t).then(done,legacy):legacy();
+</script></body></html>
